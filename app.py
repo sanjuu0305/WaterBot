@@ -1,25 +1,16 @@
-import streamlit as st
+import streamlit as st # type: ignore
 import pandas as pd
 import joblib
-import openai
-
-openai.api_key = st.secrets["OPENAI_API_KEY"]
-def ask_sdg6_chatbot(question):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "c0ntent" : "you are an expert on Clean water and sanitation."},
-            {"role": "user", "content": question}
-        ] 
-    )
-    return response["choices"][0]["message"]["content"]
+import openai # type: ignore
+# Streamlit app for SDG 6: Clean Water Predictor and Chatbot
+openai.api_key = st.secrets["openai_api_key"]
 
 # Load model
 model = joblib.load("sdg6_water_model.pkl")
 
 # Page setup
-st.set_page_config(page_title="WaterBot", layout="centered")
-st.title("💧WaterBot")
+st.set_page_config(page_title="SDG 6: Clean Water Predictor", layout="centered")
+st.title("💧 SDG 6: Water Quality Checker & Chatbot")
 
 # Tabs
 tab1, tab2 = st.tabs(["🔍 Predict Water Quality", "💬 Ask SDG 6 Chatbot"])
@@ -54,7 +45,7 @@ with tab1:
 
 # --- Chatbot tab ---
 with tab2:
-    st.subheader("💬 Ask me about water safety")
+    st.subheader("💬 Ask me about SDG 6 or water safety")
 
     user_q = st.text_input("Your question:")
 
