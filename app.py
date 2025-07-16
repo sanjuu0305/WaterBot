@@ -54,7 +54,7 @@ with tab1:
 
 # --- Chatbot tab ---
 with tab2:
-    st.subheader("💬 Ask me about SDG 6 or water safety")
+    st.subheader("💬 Ask me about water safety")
 
     user_q = st.text_input("Your question:")
 
