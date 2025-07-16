@@ -1,7 +1,7 @@
-import streamlit as st # type: ignore
+import streamlit as st 
 import pandas as pd
 import joblib
-import openai # type: ignore
+import openai 
 # Streamlit app for SDG 6: Clean Water Predictor and Chatbot
 openai.api_key = st.secrets["openai_api_key"]
 
@@ -9,8 +9,8 @@ openai.api_key = st.secrets["openai_api_key"]
 model = joblib.load("sdg6_water_model.pkl")
 
 # Page setup
-st.set_page_config(page_title="SDG 6: Clean Water Predictor", layout="centered")
-st.title("💧 SDG 6: Water Quality Checker & Chatbot")
+st.set_page_config(page_title=" Clean Water Predictor", layout="centered")
+st.title("💧 WaterBot")
 
 # Tabs
 tab1, tab2 = st.tabs(["🔍 Predict Water Quality", "💬 Ask SDG 6 Chatbot"])
