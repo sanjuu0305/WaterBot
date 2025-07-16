@@ -1,9 +1,6 @@
 import streamlit as st 
 import pandas as pd
 import joblib
-import openai 
-# Streamlit app for SDG 6: Clean Water Predictor and Chatbot
-openai.api_key = st.secrets["openai_api_key"]
 
 # Load model
 model = joblib.load("sdg6_water_model.pkl")
