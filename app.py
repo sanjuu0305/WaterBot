@@ -42,14 +42,14 @@ with tab1:
 
 # --- Chatbot tab ---
 with tab2:
-    st.subheader("💬 Ask me about SDG 6 or water safety")
+    st.subheader("💬 Ask me about water safety")
 
     user_q = st.text_input("Your question:")
 
     def simple_bot_response(query):
         query = query.lower()
         if "sdg 6" in query:
-            return "SDG 6 aims to ensure clean water and sanitation for all by 2030."
+            return "WaterBot aims to ensure clean water and sanitation."
         elif "pH" in query:
             return "Safe drinking water usually has a pH between 6.5 and 8.5."
         elif "turbidity" in query:
@@ -57,7 +57,7 @@ with tab2:
         elif "how to clean water" in query:
             return "Boiling, filtering, or using chlorination are ways to clean water."
         else:
-            return "I'm here to help with water quality and SDG 6 questions!"
+            return "I'm here to help with water quality questions!"
 
     if user_q:
         st.info(simple_bot_response(user_q))
